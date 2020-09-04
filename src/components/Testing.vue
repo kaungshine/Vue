@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<h1>{{msg}}</h1>
+		<h1 class="text-danger">{{title}}</h1>
 		<p>This is the testing vue</p>
 	</div>
 </template>
@@ -10,7 +10,12 @@
 		name: 'Testing',
 		props: {
 			msg: String
-		}
+		},
+		data (){
+	      return {
+	        title: 'Testing Component'
+	      }
+	    }
 	}
 </script>
 
