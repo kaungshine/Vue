@@ -8,6 +8,7 @@ import Home from '@/views/HelloWorld.vue'
 import Testing from '@/views/Testing.vue'
 import Exercise from '@/views/Exercise.vue'
 import Detail from '@/views/Detail.vue'
+import ShoppingCart from '@/views/ShoppingCart.vue'
 
 const router = new VueRouter({
   routes: [
@@ -27,6 +28,11 @@ const router = new VueRouter({
       path: '/detail/:id',
       name: 'detail',
       component: Detail
+    },
+    {
+      path: '/cart',
+      name: 'cart',
+      component: ShoppingCart
     }
   ],
   mode: 'history' // abstract

@@ -18,6 +18,11 @@
             <li class="nav-item">
               <router-link class="nav-link" to="/exercise">Exercise</router-link>
             </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/cart">Cart
+                <span class="badge badge-pill badge-danger" v-if="cartCount > 0">{{cartCount}}</span>
+              </router-link>
+            </li>
           </ul>
         </div>
       </div>
@@ -44,6 +49,12 @@ export default {
   name: 'App',
   mounted(){
       // this.$router.replace('/home')
+  },
+  computed:{
+    cartCount(){
+      this.$store.dispatch('getData')
+      return this.$store.state.cart.length
+    }
   }
 }
 </script>
