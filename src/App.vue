@@ -16,13 +16,16 @@
               <router-link class="nav-link" to="/testing">Testing <span class="sr-only">(current)</span></router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" to="/exercise">Exercise</router-link>
+              <router-link class="nav-link" to="/exercise">Items</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/orderDetail">OrderDetail</router-link>
             </li>
             <li class="nav-item">
               <router-link class="nav-link" to="/cart">Cart
                 <span class="badge badge-pill badge-danger" v-if="cartCount > 0">{{cartCount}}</span>
               </router-link>
-            </li>
+            </li> 
           </ul>
         </div>
       </div>

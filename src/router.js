@@ -9,6 +9,7 @@ import Testing from '@/views/Testing.vue'
 import Exercise from '@/views/Exercise.vue'
 import Detail from '@/views/Detail.vue'
 import ShoppingCart from '@/views/ShoppingCart.vue'
+import OrderDetail from '@/views/OrderDetail.vue'
 
 const router = new VueRouter({
   routes: [
@@ -33,6 +34,11 @@ const router = new VueRouter({
       path: '/cart',
       name: 'cart',
       component: ShoppingCart
+    },
+    {
+      path: '/orderDetail',
+      name: 'orderDetail',
+      component: OrderDetail
     }
   ],
   mode: 'history' // abstract
