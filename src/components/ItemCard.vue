@@ -5,8 +5,8 @@
       <h4 class="card-title font-weight-bold my-2 mb-3">{{item.item_name}}</h4>
       <p class="text-uppercase font-weight-bold"><span style="font-size: 20px;" class="text-danger">{{item.item_discount}}</span> % Discount</p>
       <div class="d-flex text-center">
-        <router-link class="btn btn-dark mr-3" :to="{ name: 'detail', params: { id: item.item_id }}">View Detail</router-link>
-        <button class="btn btn-success" @click="addToCart()">Add To Cart</button>
+        <router-link class="btn btn-dark mr-3 rounded-pill" :to="{ name: 'detail', params: { id: item.item_id }}">View Detail</router-link>
+        <button class="btn btn-danger rounded-pill" @click="addToCart()">Add To Cart</button>
       </div> 
     </div>  
   </div>
@@ -32,10 +32,10 @@
     opacity: .9;
     overflow: hidden;
   }
-  .card:hover{
+  /*.card:hover{
     transform: translateY(-30px);
     opacity: 1; 
-  }
+  }*/
   img{
     transition: .7s;
   }
@@ -43,6 +43,6 @@
     transform: scale(1.1);
   }
   .btn {
-    font-size: 14px;
+    font-size: 13px;
   }
 </style>

@@ -1,8 +1,8 @@
 <template>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12 my-5">
-				<h2>Your Order Details</h2>
+			<div class="col-md-12 my-4">
+				<h2>Order Lists</h2>
 			</div>
 		</div>
 		<div class="row">
@@ -11,20 +11,26 @@
           <thead class="thead-dark">
             <tr>
               <th>Voucher No</th>
-              <th>UserName</th>
+              <th>Customer</th>
+              <th>Notes</th>
               <th>Total</th>
             </tr>
           </thead>
           <tbody>
             <tr v-for="(order,index) in orders" :key="index">
               <td class="text-left w-25">
-            		<button
+                <router-link :to="{name: 'order-show', params: { id: order.order_id }}"><button
+                  class="btn btn-sm btn-danger rounded-circle px-3 py-2">
+                  i
+                </button></router-link>
+            		<!-- <button
                   class="btn btn-sm btn-info rounded-circle px-3 py-2">
                   i
-                </button>
+                </button> -->
             		<span class="pl-5">{{order.order_voucherno}}</span>
 							</td>
               <td>{{order.order_user.user_name}}</td>
+              <td>{{order.order_notes}}</td>
               <td>{{order.order_total}}</td>
             </tr>
           </tbody>
@@ -41,6 +47,11 @@ export default{
     data(){
       return{
         orders: []
+      }
+    },
+    watch: {
+      '$route.params.id': function () {
+        this.getOrders()
       }
     },
     mounted(){

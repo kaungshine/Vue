@@ -52,11 +52,11 @@
       </div>
       <div class="row justify-content-center">
         <div class="col-4">
-          <router-link class="btn btn-warning rounded-pill w-50 nav-link" to="/exercise">Continue Shopping</router-link>
+          <router-link class="btn btn-danger rounded-pill w-75 nav-link hvr-icon-forward" to="/itemlist">Continue Shopping<i class="fa fa-chevron-circle-right hvr-icon ml-3"></i></router-link>
         </div>
         <div class="col-4">
-          <button class="btn btn-success rounded-pill w-50" @click="order()">
-          Check Out</button>
+          <button class="btn btn-dark rounded-pill w-75 hvr-icon-grow nav-link" @click="order()">
+          Check Out<i class="far fa-check-circle hvr-icon ml-3"></i></button>
         </div>
       </div>
     </section>
@@ -98,12 +98,15 @@
         ItemService.createOrder(data)
         .then(response => {
           console.log(response)
-          localStorage.clear();
+          localStorage.removeItem('cart');
           this.orderDone = 1;
           this.$store.dispatch('getData')
         })
         .catch(error => {
-          console.log('There was an error:',error.response)
+          if(error.response.status === 401)
+          {
+            this.$router.push({path: '/login?redir=true'})
+          }
         })
       },
       formattingNumber(number) {

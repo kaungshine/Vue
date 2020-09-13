@@ -7,8 +7,8 @@
       <div class="col-md-6">
         <h1 class="text-center font-weight-bold mt-5">{{item.item_name}}</h1>
         <p>
-          <span class="mr-2"> <b-icon icon="tag-fill" variant="info"></b-icon> {{item.brand.brand_name}}</span>
-          <span> <b-icon icon="tag-fill" variant="dark"></b-icon> {{item.subcategory.subcategory_name}}</span>
+          <span class="mr-2" v-if="item.brand"> <b-icon icon="tag-fill" variant="info"></b-icon> {{item.brand.brand_name}}</span>
+          <span v-if="item.subcategory"> <b-icon icon="tag-fill" variant="dark"></b-icon> {{item.subcategory.subcategory_name}}</span>
         </p>
         <p class="font-weight-bold mt-4" style="font-size: 20px;">{{item.item_price}} Kyats</p>
         <!-- <p><span style="text-decoration: line-through;">{{item.item_price}} Kyats</span>  - {{discount_price}}</p> -->

@@ -1,14 +1,11 @@
 <template>
   <div>
-    <h1 class="text-danger">Exercise Component</h1>
-    <p>This is exercise for child components.</p>
-
+    <h2 class="text-dark mt-3">Best Seller Items</h2><hr class="col-md-3 mx-auto bg-danger">
     <div class="row">
       <div class="col-md-3" v-for="(item,index) in items" :key="index">
         <ItemCard :item="item"></ItemCard>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -43,5 +40,5 @@
 </script>
 
 <style type="text/css">
-  
+
 </style>

@@ -11,6 +11,8 @@ Vue.use(IconsPlugin)
 // css
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import './assets/Hover/css/hover.css'
+import './fontawesome/css/all.min.css'
 
 // import routers
 import router from './router.js'
